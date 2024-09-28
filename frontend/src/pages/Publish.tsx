@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { Appbar } from "../components/Appbar";
 import axios from "axios";
 import { BACKEND_URL } from "../config";
@@ -32,7 +32,7 @@ export const Publish = () => {
             //     title,
             //     content,
             // }} }
-            onClick={async (e) => {
+            onClick={async () => {
               const response = await axios.post(
                 `${BACKEND_URL}/api/v1/blog`,
                 {
@@ -58,7 +58,11 @@ export const Publish = () => {
   );
 };
 
-function TextEditor({ onChange }) {
+function TextEditor({
+  onChange,
+}: {
+  onChange: (e: ChangeEvent<HTMLTextAreaElement>) => void;
+}) {
   return (
     <div>
       <div className="w-full mb-4  ">

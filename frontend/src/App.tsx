@@ -19,6 +19,7 @@ function App() {
           <Route path="/publish" element={<Publish />} />
           <Route path="/skeleton" element={<BlogSkeleton />} />
           <Route path="/load" element={<Loading />} />
+          <Route path="/" element={<Signin />} />
         </Routes>
       </BrowserRouter>
     </>
